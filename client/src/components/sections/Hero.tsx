@@ -62,12 +62,12 @@ export function Hero() {
   return (
     <section className="relative bg-[#f8f8f8] overflow-hidden">
       {/* Hero section */}
-      <div className="min-h-[85vh] flex items-center relative">
+      <div className="min-h-[85vh] flex items-start pt-24 md:pt-32 lg:items-center relative">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent h-1/3 z-0"></div>
         
-        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 z-10 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-start lg:items-center">
             {/* Text content */}
             <motion.div 
               className="lg:pr-12 order-2 lg:order-1"
@@ -129,6 +129,25 @@ export function Hero() {
                     {t('hero.exploreCta')}
                   </a>
                 </Button>
+              </motion.div>
+              
+              <motion.div
+                className="mt-8 pt-6 border-t border-gray-200"
+                variants={itemVariants}
+              >
+                <h3 className="text-sm font-medium uppercase tracking-wide text-primary mb-4">{t('ordering.simplifiedProcess')}</h3>
+                <div className="space-y-3">
+                  {orderingSteps.map((step) => (
+                    <div key={step.id} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-medium mt-0.5">
+                        {step.id}
+                      </div>
+                      <div>
+                        <p className="text-gray-800 font-medium text-sm">{step.title}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </motion.div>
             </motion.div>
             
