@@ -93,18 +93,11 @@ export function Hero() {
               </motion.h1>
               
               <motion.p 
-                className="mt-6 text-lg text-gray-600 font-light max-w-xl leading-relaxed"
+                className="mt-6 text-lg text-gray-600 font-light max-w-xl leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 {t('hero.subtitle')}
               </motion.p>
-              
-              <motion.div variants={itemVariants} className="mt-4 mb-6">
-                <div className="flex items-center gap-1 text-primary">
-                  <span className="text-sm">{t('hero.scrollForSteps')}</span>
-                  <ChevronDown className="h-4 w-4 animate-bounce" />
-                </div>
-              </motion.div>
               
               <motion.div 
                 className="mt-4 flex flex-col sm:flex-row gap-4"
@@ -164,28 +157,6 @@ export function Hero() {
                   alt="Model wearing designer glasses" 
                   className="w-full h-full object-cover object-center"
                 />
-                
-                {/* Ordering Steps Preview card */}
-                <motion.div 
-                  className="absolute -bottom-6 -right-6 lg:-right-12 lg:-bottom-8 w-48 lg:w-64 shadow-xl bg-white p-4"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                >
-                  <div className="border-b pb-2 mb-3">
-                    <h3 className="text-xs font-medium uppercase tracking-wider text-primary">{t('ordering.simplifiedProcess')}</h3>
-                  </div>
-                  <div className="space-y-2">
-                    {orderingSteps.map((step) => (
-                      <div key={step.id} className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-medium">
-                          {step.id}
-                        </div>
-                        <span className="text-xs text-gray-700">{step.title}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
               </motion.div>
             </div>
           </div>
