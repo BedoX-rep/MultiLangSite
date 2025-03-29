@@ -30,18 +30,14 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const setLanguage = (lang: string) => {
     console.log('Context setLanguage called with:', lang);
     
+    if (lang === language) {
+      // No need to change if it's already the selected language
+      return;
+    }
+    
     try {
-      // Update localStorage directly
-      localStorage.setItem('i18nextLng', lang);
-      
-      // Change i18n language
+      // Change i18n language - this will trigger the languageChanged event
       i18n.changeLanguage(lang);
-      
-      // Update our state
-      setLanguageState(lang);
-      
-      // Set direction based on language
-      setDirection(lang === 'ar' ? 'rtl' : 'ltr');
     } catch (error) {
       console.error('Error changing language:', error);
     }
@@ -51,31 +47,31 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   useEffect(() => {
     const handleLanguageChanged = (newLang: string) => {
       console.log('Language change detected:', newLang);
+      
+      // Update state
       setLanguageState(newLang);
-      setDirection(newLang === 'ar' ? 'rtl' : 'ltr');
+      
+      // Update direction
+      const newDirection = newLang === 'ar' ? 'rtl' : 'ltr';
+      setDirection(newDirection);
+      
+      // Update HTML document
+      document.documentElement.lang = newLang;
+      document.documentElement.dir = newDirection;
+      console.log('Document direction updated:', newDirection);
+      
+      // Force refresh of DOM to ensure correct language rendering
+      window.dispatchEvent(new Event('language-changed'));
     };
 
     // Add event listener
     i18n.on('languageChanged', handleLanguageChanged);
-    
-    // Set initial language from i18n or localStorage
-    const savedLang = localStorage.getItem('i18nextLng') || 'en';
-    if (savedLang !== language) {
-      setLanguage(savedLang);
-    }
     
     // Cleanup
     return () => {
       i18n.off('languageChanged', handleLanguageChanged);
     };
   }, []);
-
-  // Update HTML document when direction changes
-  useEffect(() => {
-    document.documentElement.lang = language;
-    document.documentElement.dir = direction;
-    console.log('Document direction updated:', direction);
-  }, [language, direction]);
 
   return (
     <LanguageContext.Provider value={{ language, direction, setLanguage }}>

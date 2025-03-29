@@ -1,7 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-// We're going to bypass the language detector completely
-// import LanguageDetector from 'i18next-browser-languagedetector';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 import enTranslation from '../locales/en.json';
 import frTranslation from '../locales/fr.json';
@@ -20,14 +19,20 @@ const resources = {
   }
 };
 
-// Basic initialization without any detection
+// Initialize with language detector
 i18n
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    // Hardcode English as the default language
-    lng: 'en', 
     fallbackLng: 'en',
+    
+    // Detection options
+    detection: {
+      order: ['localStorage', 'navigator'],
+      lookupLocalStorage: 'i18nextLng',
+      caches: ['localStorage'],
+    },
     
     // Other configuration
     interpolation: {
@@ -35,11 +40,6 @@ i18n
     },
     react: {
       useSuspense: false
-    },
-    
-    // We'll handle the language changes manually
-    detection: {
-      order: []
     }
   });
 
@@ -47,8 +47,5 @@ i18n
 i18n.on('languageChanged', (lng) => {
   console.log(`i18n language changed to: ${lng}`);
 });
-
-// Force set to English on startup
-i18n.changeLanguage('en');
 
 export default i18n;

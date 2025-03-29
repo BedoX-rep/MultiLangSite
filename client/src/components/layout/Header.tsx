@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
 import { Menu, X, ShoppingBag, Search } from 'lucide-react';
@@ -11,6 +11,7 @@ export function Header() {
   const { t } = useTranslation();
   const { language, setLanguage, direction } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language || 'en');
 
   const languages = [
     { code: 'en', label: 'En' },
@@ -18,12 +19,30 @@ export function Header() {
     { code: 'ar', label: 'Ar' }
   ];
 
+  // Update current language state when i18n language changes
+  useEffect(() => {
+    const handleLanguageChanged = (lng: string) => {
+      setCurrentLanguage(lng);
+    };
+    
+    i18n.on('languageChanged', handleLanguageChanged);
+    
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
+  }, []);
+
   // Function to handle language change
   const handleLanguageChange = (lang: string) => {
     console.log(`Button clicked for language: ${lang}, current language is: ${i18n.language}`);
     
-    // Use the context method which will handle everything
-    setLanguage(lang);
+    // Force reload the page with the new language
+    if (lang !== i18n.language) {
+      i18n.changeLanguage(lang).then(() => {
+        // Use the context method which will handle everything
+        setLanguage(lang);
+      });
+    }
   };
 
   const navItems = [
@@ -71,7 +90,7 @@ export function Header() {
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
                     className={`text-xs uppercase px-2 py-1 rounded font-light tracking-wider transition-colors duration-200 ${
-                      language === lang.code 
+                      currentLanguage === lang.code 
                         ? 'bg-primary text-white font-medium' 
                         : 'text-gray-500 hover:text-gray-800'
                     }`}
@@ -135,7 +154,7 @@ export function Header() {
                             setMobileMenuOpen(false);
                           }}
                           className={`text-sm uppercase px-3 py-1.5 rounded ${
-                            language === lang.code 
+                            currentLanguage === lang.code 
                               ? 'bg-primary text-white font-medium' 
                               : 'text-gray-500'
                           }`}
