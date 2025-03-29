@@ -4,7 +4,6 @@ import { FeaturedCollection } from '@/components/sections/FeaturedCollection';
 import { VirtualTryOn } from '@/components/sections/VirtualTryOn';
 import { Craftsmanship } from '@/components/sections/Craftsmanship';
 import { Testimonials } from '@/components/sections/Testimonials';
-import { OrderingProcess } from '@/components/sections/OrderingProcess';
 import { StoreLocations } from '@/components/sections/StoreLocations';
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
       <FeaturedCollection />
       <VirtualTryOn />
       <Craftsmanship />
-      <OrderingProcess />
       <StoreLocations />
       <Testimonials />
     </div>

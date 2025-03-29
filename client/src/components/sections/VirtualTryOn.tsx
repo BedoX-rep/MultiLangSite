@@ -106,7 +106,7 @@ export function VirtualTryOn() {
             <div className="relative w-[280px] md:w-[320px] shadow-lg bg-white p-3 rounded-3xl overflow-hidden border border-gray-200">
               {/* Phone mockup with virtual try-on interface */}
               <img 
-                src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3"
+                src="/attached_assets/vto-mobile.webp"
                 alt="Virtual try-on on smartphone" 
                 className="w-full h-full object-cover rounded-2xl"
               />
@@ -115,7 +115,7 @@ export function VirtualTryOn() {
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-80 backdrop-blur-sm">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="text-xs font-medium text-gray-900">Tortoise Frame</h4>
+                    <h4 className="text-xs font-medium text-gray-900">Durand Frame</h4>
                     <p className="text-xs text-gray-600">$149</p>
                   </div>
                   <Button className="h-8 px-3 text-xs bg-primary text-white hover:bg-primary/90 rounded-full">

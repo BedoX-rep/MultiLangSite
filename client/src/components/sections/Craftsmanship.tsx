@@ -1,13 +1,40 @@
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import { CheckCircle2, Shield, Award } from 'lucide-react';
 
 export function Craftsmanship() {
   const { t } = useTranslation();
+  const controls = useAnimation();
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-  // Import partner logos
-  const essilorLogo = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Essilor-Logo.svg/320px-Essilor-Logo.svg.png";
-  const indoLogo = "https://www.indo.es/site/themes/indo/images/indo-logo.svg";
+  // Define partner logos
+  const brandPartners = [
+    { name: "Essilor", logo: "/attached_assets/1logo.png" },
+    { name: "Hoya", logo: "/attached_assets/hoya-corporation3043-183421669.jpg" },
+    { name: "Zeiss", logo: "/attached_assets/logo3.png" },
+    { name: "Indo", logo: "/attached_assets/logo-829712431.png" }
+  ];
+
+  // Animation for the logo carousel
+  useEffect(() => {
+    const startCarouselAnimation = async () => {
+      // Create infinite animation loop
+      while (true) {
+        await controls.start({
+          x: [0, -1500],
+          transition: { 
+            duration: 25, 
+            ease: "linear", 
+            repeat: Infinity,
+            repeatType: "loop"
+          }
+        });
+      }
+    };
+
+    startCarouselAnimation();
+  }, [controls]);
   
   return (
     <section id="about" className="py-16 bg-white">
@@ -19,15 +46,15 @@ export function Craftsmanship() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold text-gray-900 font-serif">
+          <h2 className="text-3xl font-serif font-light text-gray-900 mb-4">
             {t('partners.title')}
           </h2>
-          <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
+          <p className="text-gray-600 max-w-3xl mx-auto">
             {t('partners.description')}
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {/* Quality Assurance */}
           <motion.div
             className="bg-gray-50 p-6 rounded-lg shadow-sm"
@@ -89,27 +116,35 @@ export function Craftsmanship() {
           </motion.div>
         </div>
         
-        {/* Partner Logos */}
-        <motion.div 
-          className="mt-12 flex flex-wrap justify-center items-center gap-8 pt-8 border-t border-gray-200"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <motion.div 
-            className="h-12 grayscale hover:grayscale-0 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-          >
-            <img src={essilorLogo} alt="Essilor Logo" className="h-full" />
-          </motion.div>
-          <motion.div 
-            className="h-10 grayscale hover:grayscale-0 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-          >
-            <img src={indoLogo} alt="Indo Logo" className="h-full" />
-          </motion.div>
-        </motion.div>
+        {/* Brand Partners Logo Slider */}
+        <div className="mt-20 mb-10 border-t border-b border-gray-100 py-12 overflow-hidden">
+          <h3 className="text-center text-lg font-medium text-gray-900 mb-8">
+            {t('partners.trustedBy')}
+          </h3>
+          
+          <div className="relative overflow-hidden w-full" ref={carouselRef}>
+            {/* First set of logos */}
+            <motion.div 
+              className="flex items-center gap-20 absolute"
+              animate={controls}
+            >
+              {/* Duplicate the logos to create a seamless loop */}
+              {[...brandPartners, ...brandPartners, ...brandPartners].map((partner, index) => (
+                <motion.div 
+                  key={`${partner.name}-${index}`}
+                  className="flex-shrink-0 h-16 px-8 flex items-center justify-center"
+                  whileHover={{ scale: 1.05, filter: "brightness(1.2)" }}
+                >
+                  <img 
+                    src={partner.logo} 
+                    alt={`${partner.name} Logo`} 
+                    className="max-h-full max-w-[180px] object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

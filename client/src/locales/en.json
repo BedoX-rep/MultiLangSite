@@ -9,7 +9,11 @@
   "hero": {
     "title": "Premium Eyewear For Your Digital Lifestyle",
     "subtitle": "Discover our exquisite collection of designer frames and lenses crafted for modern life",
-    "cta": "Shop Now"
+    "cta": "Shop Now",
+    "tagline": "Premium Eyewear",
+    "scrollForSteps": "Scroll to see ordering steps",
+    "startOrderCta": "Start Your Order",
+    "exploreCta": "Explore Collection"
   },
   "services": {
     "title": "Available Services",
@@ -50,18 +54,22 @@
   },
   "partners": {
     "title": "Premium Materials & Brand Partners",
-    "description": "At Lens Optique, we use only the highest quality materials and partner with leading lens manufacturers like Essilor and Indo to create eyewear that's both beautiful and functional.",
+    "description": "At Lens Optique, we use only the highest quality materials and partner with leading lens manufacturers to create eyewear that's both beautiful and functional.",
+    "trustedBy": "Trusted By World-Leading Brands",
     "quality": "Quality Assurance",
     "qualityDescription": "Every frame undergoes rigorous testing to ensure durability, comfort, and perfect fit for daily wear.",
     "materials": "Premium Materials",
     "materialsDescription": "We use hypoallergenic acetate, titanium, and sustainable materials that are lightweight yet incredibly durable.",
     "brands": "Trusted Partners",
-    "brandsDescription": "Our lenses are crafted by world-renowned manufacturers Essilor and Indo, ensuring perfect optical clarity and protection."
+    "brandsDescription": "Our lenses are crafted by world-renowned manufacturers ensuring perfect optical clarity and protection."
   },
   "ordering": {
     "title": "How to Order Your Perfect Glasses",
     "subtitle": "Our simple 4-step process makes ordering custom glasses online easy and convenient",
     "step": "Step",
+    "easierThanEver": "Easier Than Ever",
+    "simplifiedProcess": "Our Simple Process",
+    "startOrderCta": "Start Your Order Now",
     "step1": {
       "title": "Choose Your Frames",
       "description": "Browse our collection and select the frames that match your style and preferences."
