@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
 
 interface LanguageContextType {
   language: string;
@@ -7,11 +8,11 @@ interface LanguageContextType {
   setLanguage: (lang: string) => void;
 }
 
-// Create a default context value to avoid undefined check
+// Create a default context value
 const defaultContextValue: LanguageContextType = {
   language: 'en',
   direction: 'ltr',
-  setLanguage: () => console.warn('LanguageProvider not found')
+  setLanguage: () => {}
 };
 
 // Export the context with a default value
@@ -22,9 +23,23 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const { i18n } = useTranslation();
-  const [language, setLanguageState] = useState(i18n.language || 'en');
+  // Get stored language from localStorage or use browser language
+  const getInitialLanguage = () => {
+    const savedLanguage = localStorage.getItem('i18nextLng');
+    return savedLanguage || navigator.language.split('-')[0] || 'en';
+  };
+
+  const [language, setLanguageState] = useState(getInitialLanguage());
   const [direction, setDirection] = useState<'ltr' | 'rtl'>(language === 'ar' ? 'rtl' : 'ltr');
+  const { i18n } = useTranslation();
+
+  // Initialize with the correct language
+  useEffect(() => {
+    const initialLang = getInitialLanguage();
+    i18n.changeLanguage(initialLang);
+    setLanguageState(initialLang);
+    setDirection(initialLang === 'ar' ? 'rtl' : 'ltr');
+  }, []);
 
   const setLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
@@ -34,21 +49,31 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   };
 
   useEffect(() => {
-    // Set initial direction based on language
-    setDirection(language === 'ar' ? 'rtl' : 'ltr');
-    
     // Update HTML attributes
     document.documentElement.lang = language;
     document.documentElement.dir = direction;
+    
+    console.log('Language changed to:', language, 'Direction:', direction);
   }, [language, direction]);
 
+  // Create the value object to be passed to the provider
+  const contextValue = {
+    language,
+    direction,
+    setLanguage
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, direction, setLanguage }}>
+    <LanguageContext.Provider value={contextValue}>
       {children}
     </LanguageContext.Provider>
   );
 };
 
-export const useLanguage = (): LanguageContextType => {
-  return useContext(LanguageContext);
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
 };
