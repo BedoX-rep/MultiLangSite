@@ -1,5 +1,5 @@
 {
-  "brand": "OpticElegance",
+  "brand": "Lens Optique",
   "nav": {
     "home": "Home",
     "collection": "Collection",
@@ -46,16 +46,17 @@
     "cta": "Try It Now"
   },
   "partners": {
-    "title": "Craftsmanship & Precision",
-    "description": "We partner with the world's finest eyewear manufacturers to bring you exceptional quality and innovative designs for every lifestyle.",
-    "formTitle": "Subscribe for exclusive updates",
-    "formPlaceholder": "Your email",
-    "formButton": "Subscribe",
-    "subscribeSuccess": "Subscription successful!",
-    "subscribeMessage": "Thank you for subscribing to our newsletter."
+    "title": "Premium Materials & Brand Partners",
+    "description": "At Lens Optique, we use only the highest quality materials and partner with leading lens manufacturers like Essilor and Indo to create eyewear that's both beautiful and functional.",
+    "quality": "Quality Assurance",
+    "qualityDescription": "Every frame undergoes rigorous testing to ensure durability, comfort, and perfect fit for daily wear.",
+    "materials": "Premium Materials",
+    "materialsDescription": "We use hypoallergenic acetate, titanium, and sustainable materials that are lightweight yet incredibly durable.",
+    "brands": "Trusted Partners",
+    "brandsDescription": "Our lenses are crafted by world-renowned manufacturers Essilor and Indo, ensuring perfect optical clarity and protection."
   },
   "trusted": {
-    "title": "Our Trusted Partners",
+    "title": "Client Reviews",
     "testimonial1": {
       "text": "These glasses have changed how I work. The blue light filtering has eliminated my eye strain completely.",
       "author": "Sarah Johnson"
@@ -98,6 +99,6 @@
       "button": "Subscribe"
     },
     "tagline": "Premium eyewear crafted for your digital lifestyle",
-    "copyright": "© 2025 OpticElegance. All rights reserved."
+    "copyright": "© 2025 Lens Optique. All rights reserved."
   }
 }

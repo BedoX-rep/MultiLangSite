@@ -1,5 +1,5 @@
 {
-  "brand": "OpticÉlégance",
+  "brand": "Lens Optique",
   "nav": {
     "home": "Accueil",
     "collection": "Collection",
@@ -46,16 +46,17 @@
     "cta": "Essayer Maintenant"
   },
   "partners": {
-    "title": "Artisanat & Précision",
-    "description": "Nous nous associons aux meilleurs fabricants de lunettes du monde pour vous offrir une qualité exceptionnelle et des designs innovants pour chaque style de vie.",
-    "formTitle": "Abonnez-vous pour des mises à jour exclusives",
-    "formPlaceholder": "Votre email",
-    "formButton": "S'abonner",
-    "subscribeSuccess": "Abonnement réussi !",
-    "subscribeMessage": "Merci de vous être abonné à notre newsletter."
+    "title": "Matériaux Premium & Partenaires",
+    "description": "Chez Lens Optique, nous utilisons uniquement des matériaux de la plus haute qualité et collaborons avec des fabricants de verres leaders comme Essilor et Indo pour créer des lunettes à la fois belles et fonctionnelles.",
+    "quality": "Assurance Qualité",
+    "qualityDescription": "Chaque monture subit des tests rigoureux pour garantir durabilité, confort et ajustement parfait pour un port quotidien.",
+    "materials": "Matériaux Premium",
+    "materialsDescription": "Nous utilisons de l'acétate hypoallergénique, du titane et des matériaux durables qui sont légers mais incroyablement résistants.",
+    "brands": "Partenaires de Confiance",
+    "brandsDescription": "Nos verres sont fabriqués par les manufacturiers mondialement reconnus Essilor et Indo, assurant une clarté optique et une protection parfaites."
   },
   "trusted": {
-    "title": "Nos Partenaires de Confiance",
+    "title": "Avis de Clients",
     "testimonial1": {
       "text": "Ces lunettes ont changé ma façon de travailler. Le filtrage de la lumière bleue a complètement éliminé ma fatigue oculaire.",
       "author": "Sarah Johnson"
@@ -98,6 +99,6 @@
       "button": "S'abonner"
     },
     "tagline": "Lunettes premium conçues pour votre style de vie numérique",
-    "copyright": "© 2025 OpticÉlégance. Tous droits réservés."
+    "copyright": "© 2025 Lens Optique. Tous droits réservés."
   }
 }

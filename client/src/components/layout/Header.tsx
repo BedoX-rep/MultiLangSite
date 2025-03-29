@@ -81,9 +81,9 @@ export function Header() {
                   <button
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
-                    className={`text-xs uppercase px-1 py-1 font-light tracking-wider transition-colors duration-200 ${
+                    className={`text-xs uppercase px-2 py-1 rounded font-light tracking-wider transition-colors duration-200 ${
                       language === lang.code 
-                        ? 'text-primary underline underline-offset-4' 
+                        ? 'bg-primary text-white font-medium' 
                         : 'text-gray-500 hover:text-gray-800'
                     }`}
                   >
@@ -145,9 +145,9 @@ export function Header() {
                             handleLanguageChange(lang.code);
                             setMobileMenuOpen(false);
                           }}
-                          className={`text-sm uppercase px-2 py-1 ${
+                          className={`text-sm uppercase px-3 py-1.5 rounded ${
                             language === lang.code 
-                              ? 'text-primary font-medium' 
+                              ? 'bg-primary text-white font-medium' 
                               : 'text-gray-500'
                           }`}
                         >
