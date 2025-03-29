@@ -1,0 +1,95 @@
+{
+  "brand": "OpticÉlégance",
+  "nav": {
+    "home": "Accueil",
+    "collection": "Collection",
+    "services": "Services",
+    "about": "À propos"
+  },
+  "hero": {
+    "title": "Lunettes Premium Pour Votre Mode de Vie Numérique",
+    "subtitle": "Découvrez notre collection exquise de montures et verres de créateurs conçus pour la vie moderne",
+    "cta": "Acheter Maintenant"
+  },
+  "services": {
+    "title": "Services de Prescription Utiles",
+    "eyeExam": "Examen de la Vue",
+    "eyeExamDesc": "Évaluation complète de la santé oculaire par des professionnels certifiés",
+    "lensOptions": "Options de Verres",
+    "lensOptionsDesc": "Large gamme de types de verres, du filtrage de la lumière bleue au progressif",
+    "styling": "Style de Monture",
+    "stylingDesc": "Consultation de style personnelle pour trouver des montures qui complètent vos traits",
+    "delivery": "Livraison Rapide",
+    "deliveryDesc": "Expédition rapide et livraison sans tracas à votre porte",
+    "cta": "Prendre Rendez-vous"
+  },
+  "featured": {
+    "title": "Collection en Vedette",
+    "all": "Tous",
+    "men": "Hommes",
+    "women": "Femmes",
+    "kids": "Enfants",
+    "luxe": "Luxe",
+    "product1": "Monture Cristal",
+    "product2": "Lunettes Montrose",
+    "product3": "Lunettes de Soleil Ambre",
+    "product4": "Montures Écologiques en Bois",
+    "viewMore": "Voir Plus"
+  },
+  "virtual": {
+    "title": "Technologie d'Essayage Virtuel",
+    "tryOnLabel": "Essayez les montures sur votre visage en temps réel",
+    "bullet1": "Voir les montures sur votre visage avant l'achat",
+    "bullet2": "Accès depuis n'importe quel appareil avec caméra",
+    "bullet3": "Comparez plusieurs styles côte à côte",
+    "bullet4": "Partagez avec vos amis et votre famille pour avoir des opinions",
+    "cta": "Essayer Maintenant"
+  },
+  "partners": {
+    "title": "Artisanat & Précision",
+    "description": "Nous nous associons aux meilleurs fabricants de lunettes du monde pour vous offrir une qualité exceptionnelle et des designs innovants pour chaque style de vie.",
+    "formTitle": "Abonnez-vous pour des mises à jour exclusives",
+    "formPlaceholder": "Votre email",
+    "formButton": "S'abonner",
+    "subscribeSuccess": "Abonnement réussi !",
+    "subscribeMessage": "Merci de vous être abonné à notre newsletter."
+  },
+  "trusted": {
+    "title": "Nos Partenaires de Confiance",
+    "testimonial1": {
+      "text": "Ces lunettes ont changé ma façon de travailler. Le filtrage de la lumière bleue a complètement éliminé ma fatigue oculaire.",
+      "author": "Sarah Johnson"
+    },
+    "testimonial2": {
+      "text": "La fonction d'essayage virtuel m'a fait gagner beaucoup de temps. J'ai trouvé ma paire parfaite du premier coup !",
+      "author": "Michael Chen"
+    },
+    "testimonial3": {
+      "text": "Qualité exceptionnelle et service client incroyable. Mes nouvelles lunettes sont arrivées parfaitement ajustées.",
+      "author": "Emma Rodriguez"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "À propos d'OpticÉlégance",
+      "story": "Notre Histoire",
+      "team": "Notre Équipe",
+      "careers": "Carrières",
+      "press": "Presse"
+    },
+    "customer": {
+      "title": "Service Client",
+      "faq": "FAQ",
+      "shipping": "Livraison & Retours",
+      "warranty": "Garantie",
+      "repairs": "Réparations"
+    },
+    "legal": {
+      "title": "Juridique",
+      "terms": "Conditions d'Utilisation",
+      "privacy": "Politique de Confidentialité",
+      "accessibility": "Accessibilité"
+    },
+    "copyright": "© 2025 OpticÉlégance. Tous droits réservés."
+  }
+}

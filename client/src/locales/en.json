@@ -1,0 +1,95 @@
+{
+  "brand": "OpticElegance",
+  "nav": {
+    "home": "Home",
+    "collection": "Collection",
+    "services": "Services",
+    "about": "About"
+  },
+  "hero": {
+    "title": "Premium Eyewear For Your Digital Lifestyle",
+    "subtitle": "Discover our exquisite collection of designer frames and lenses crafted for modern life",
+    "cta": "Shop Now"
+  },
+  "services": {
+    "title": "Helpful Prescription Services",
+    "eyeExam": "Eye Examination",
+    "eyeExamDesc": "Comprehensive eye health evaluation by certified professionals",
+    "lensOptions": "Lens Options",
+    "lensOptionsDesc": "Wide range of lens types from blue light filtering to progressive",
+    "styling": "Frame Styling",
+    "stylingDesc": "Personal styling consultation to find frames that complement your features",
+    "delivery": "Fast Delivery",
+    "deliveryDesc": "Quick shipping and hassle-free delivery to your doorstep",
+    "cta": "Book Appointment"
+  },
+  "featured": {
+    "title": "Featured Collection",
+    "all": "All",
+    "men": "Men",
+    "women": "Women",
+    "kids": "Kids",
+    "luxe": "Luxury",
+    "product1": "Crystal Frame",
+    "product2": "Montrose Glasses",
+    "product3": "Amber Sunglasses",
+    "product4": "Eco Wood Frames",
+    "viewMore": "View More"
+  },
+  "virtual": {
+    "title": "Virtual Try-On Technology",
+    "tryOnLabel": "Try frames on your face in real-time",
+    "bullet1": "See frames on your face before purchase",
+    "bullet2": "Access from any device with a camera",
+    "bullet3": "Compare multiple styles side by side",
+    "bullet4": "Share with friends and family for opinions",
+    "cta": "Try It Now"
+  },
+  "partners": {
+    "title": "Craftsmanship & Precision",
+    "description": "We partner with the world's finest eyewear manufacturers to bring you exceptional quality and innovative designs for every lifestyle.",
+    "formTitle": "Subscribe for exclusive updates",
+    "formPlaceholder": "Your email",
+    "formButton": "Subscribe",
+    "subscribeSuccess": "Subscription successful!",
+    "subscribeMessage": "Thank you for subscribing to our newsletter."
+  },
+  "trusted": {
+    "title": "Our Trusted Partners",
+    "testimonial1": {
+      "text": "These glasses have changed how I work. The blue light filtering has eliminated my eye strain completely.",
+      "author": "Sarah Johnson"
+    },
+    "testimonial2": {
+      "text": "The virtual try-on feature saved me so much time. I found my perfect pair on the first try!",
+      "author": "Michael Chen"
+    },
+    "testimonial3": {
+      "text": "Outstanding quality and amazing customer service. My new glasses arrived perfectly fitted.",
+      "author": "Emma Rodriguez"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "About OpticElegance",
+      "story": "Our Story",
+      "team": "Our Team",
+      "careers": "Careers",
+      "press": "Press"
+    },
+    "customer": {
+      "title": "Customer Care",
+      "faq": "FAQ",
+      "shipping": "Shipping & Returns",
+      "warranty": "Warranty",
+      "repairs": "Repairs"
+    },
+    "legal": {
+      "title": "Legal",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "accessibility": "Accessibility"
+    },
+    "copyright": "© 2025 OpticElegance. All rights reserved."
+  }
+}
