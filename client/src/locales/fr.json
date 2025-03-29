@@ -12,7 +12,8 @@
     "cta": "Acheter Maintenant"
   },
   "services": {
-    "title": "Services de Prescription Utiles",
+    "title": "Services Disponibles",
+    "subtitle": "Découvrez nos services premium de soins oculaires et de personnalisation",
     "eyeExam": "Examen de la Vue",
     "eyeExamDesc": "Évaluation complète de la santé oculaire par des professionnels certifiés",
     "lensOptions": "Options de Verres",
@@ -80,20 +81,17 @@
     "cta": "Commencer Votre Commande"
   },
   "locations": {
-    "title": "Visitez Nos Boutiques",
-    "subtitle": "Découvrez notre collection en personne dans l'une de nos boutiques optiques premium",
+    "title": "Visitez Notre Boutique",
+    "subtitle": "Découvrez notre collection de lunettes de luxe dans notre boutique à Tanger",
     "directions": "Obtenir l'Itinéraire",
+    "book": "Prendre Rendez-vous",
+    "mapPlaceholder": "Chargement de la carte interactive...",
     "store1": {
-      "name": "Lens Optique Centre-Ville",
-      "address": "123 Avenue de la Mode, Quartier Centre-Ville",
+      "name": "Lens Optique - Tanger",
+      "address": "43 Boulevard Mohammed V, Tanger, Maroc",
       "hours": "Lun-Sam: 10h-19h, Dim: 12h-17h",
-      "phone": "+1 (555) 123-4567"
-    },
-    "store2": {
-      "name": "Lens Optique Galerie",
-      "address": "456 Allée du Luxe, Centre Commercial Galerie",
-      "hours": "Lun-Sam: 11h-21h, Dim: 12h-18h",
-      "phone": "+1 (555) 987-6543"
+      "phone": "+212 539-123-456",
+      "email": "tangier@lensoptique.com"
     }
   },
   "trusted": {

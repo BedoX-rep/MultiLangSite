@@ -12,7 +12,8 @@
     "cta": "Shop Now"
   },
   "services": {
-    "title": "Helpful Prescription Services",
+    "title": "Available Services",
+    "subtitle": "Experience our premium eye care and customization services",
     "eyeExam": "Eye Examination",
     "eyeExamDesc": "Comprehensive eye health evaluation by certified professionals",
     "lensOptions": "Lens Options",
@@ -80,20 +81,17 @@
     "cta": "Start Your Order"
   },
   "locations": {
-    "title": "Visit Our Stores",
-    "subtitle": "Experience our collection in person at one of our premium optical boutiques",
+    "title": "Visit Our Store",
+    "subtitle": "Experience our luxury eyewear collection at our boutique in Tangier",
     "directions": "Get Directions",
+    "book": "Book Appointment",
+    "mapPlaceholder": "Interactive map loading...",
     "store1": {
-      "name": "Lens Optique Downtown",
-      "address": "123 Fashion Avenue, Downtown District",
+      "name": "Lens Optique - Tangier",
+      "address": "43 Boulevard Mohammed V, Tangier, Morocco",
       "hours": "Mon-Sat: 10AM-7PM, Sun: 12PM-5PM",
-      "phone": "+1 (555) 123-4567"
-    },
-    "store2": {
-      "name": "Lens Optique Galleria",
-      "address": "456 Luxury Lane, Galleria Mall",
-      "hours": "Mon-Sat: 11AM-9PM, Sun: 12PM-6PM",
-      "phone": "+1 (555) 987-6543"
+      "phone": "+212 539-123-456",
+      "email": "tangier@lensoptique.com"
     }
   },
   "trusted": {
