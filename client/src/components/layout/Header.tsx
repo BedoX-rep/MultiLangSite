@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useLanguage } from '@/context/LanguageContext';
+import i18n from '@/lib/i18n';
 
 export function Header() {
   const { t } = useTranslation();
@@ -16,6 +17,25 @@ export function Header() {
     { code: 'fr', label: 'FR' },
     { code: 'ar', label: 'AR' }
   ];
+
+  // Function to handle language change directly
+  const handleLanguageChange = (lang: string) => {
+    console.log(`Button clicked for language: ${lang}, current language is: ${language}`);
+    
+    // Direct way to change language
+    i18n.changeLanguage(lang);
+    
+    // Also call context method
+    setLanguage(lang);
+    
+    // Force update localStorage
+    localStorage.setItem('i18nextLng', lang);
+    
+    // Log current state after change
+    setTimeout(() => {
+      console.log(`After change: i18n.language=${i18n.language}, context language=${language}`);
+    }, 100);
+  };
 
   const navItems = [
     { href: '/', label: t('nav.home') },
@@ -58,12 +78,17 @@ export function Header() {
                   key={lang.code}
                   variant={language === lang.code ? "default" : "ghost"}
                   size="sm"
-                  onClick={() => setLanguage(lang.code)}
+                  onClick={() => handleLanguageChange(lang.code)}
                   className="px-2 py-1 text-sm rounded-md"
                 >
                   {lang.label}
                 </Button>
               ))}
+            </div>
+            
+            {/* Current language display for debugging */}
+            <div className="ml-3 text-xs text-gray-400">
+              {language}
             </div>
             
             {/* Mobile menu button */}
