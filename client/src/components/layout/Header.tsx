@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ShoppingBag, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useLanguage } from '@/context/LanguageContext';
@@ -13,9 +13,9 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const languages = [
-    { code: 'en', label: 'EN' },
-    { code: 'fr', label: 'FR' },
-    { code: 'ar', label: 'AR' }
+    { code: 'en', label: 'En' },
+    { code: 'fr', label: 'Fr' },
+    { code: 'ar', label: 'Ar' }
   ];
 
   // Function to handle language change directly
@@ -45,82 +45,117 @@ export function Header() {
   ];
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex-1 flex justify-start">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-xl font-serif font-semibold text-primary">
+              <span className="text-xl font-serif font-normal tracking-wide text-primary">
                 {t('brand')}
               </span>
             </Link>
-            
-            {/* Desktop navigation */}
-            <nav className="hidden md:ml-10 md:flex space-x-8 rtl:space-x-reverse">
+          </div>
+          
+          {/* Desktop navigation - centered */}
+          <nav className="hidden md:flex flex-1 justify-center">
+            <div className="flex space-x-8 rtl:space-x-reverse">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="border-transparent text-gray-900 hover:border-primary hover:text-primary px-3 py-2 text-sm font-medium"
+                  className="text-gray-700 hover:text-primary border-b-2 border-transparent hover:border-primary px-1 py-2 text-sm font-light tracking-wide transition-colors duration-200"
                 >
                   {item.label}
                 </a>
               ))}
-            </nav>
-          </div>
+            </div>
+          </nav>
           
-          {/* Language switcher and mobile menu */}
-          <div className="flex items-center">
-            <div className="flex space-x-3 rtl:space-x-reverse">
-              {languages.map((lang) => (
-                <Button
-                  key={lang.code}
-                  variant={language === lang.code ? "default" : "ghost"}
-                  size="sm"
-                  onClick={() => handleLanguageChange(lang.code)}
-                  className="px-2 py-1 text-sm rounded-md"
-                >
-                  {lang.label}
-                </Button>
-              ))}
+          {/* Right side: language switcher, search and cart */}
+          <div className="flex-1 flex justify-end items-center space-x-4 rtl:space-x-reverse">
+            {/* Language switcher */}
+            <div className="hidden md:flex border-r border-l px-4 border-gray-200">
+              <div className="flex space-x-3 rtl:space-x-reverse">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => handleLanguageChange(lang.code)}
+                    className={`text-xs uppercase px-1 py-1 font-light tracking-wider transition-colors duration-200 ${
+                      language === lang.code 
+                        ? 'text-primary underline underline-offset-4' 
+                        : 'text-gray-500 hover:text-gray-800'
+                    }`}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
             </div>
             
-            {/* Current language display for debugging */}
-            <div className="ml-3 text-xs text-gray-400">
-              {language}
+            {/* Search and cart icons */}
+            <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+              <button className="text-gray-700 hover:text-primary">
+                <Search className="h-5 w-5" />
+              </button>
+              <button className="text-gray-700 hover:text-primary">
+                <ShoppingBag className="h-5 w-5" />
+              </button>
             </div>
             
             {/* Mobile menu button */}
-            <div className="ml-4 md:hidden flex items-center">
+            <div className="md:hidden flex items-center">
               <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
+                  <Button variant="ghost" size="icon" className="text-gray-700">
                     <Menu className="h-6 w-6" />
                     <span className="sr-only">Open menu</span>
                   </Button>
                 </SheetTrigger>
                 <SheetContent side={direction === 'ltr' ? 'right' : 'left'} className="flex flex-col">
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="text-xl font-serif font-semibold text-primary">
+                  <div className="flex justify-between items-center mb-6 border-b pb-4">
+                    <span className="text-xl font-serif font-normal tracking-wide text-primary">
                       {t('brand')}
                     </span>
                     <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)}>
-                      <X className="h-6 w-6" />
+                      <X className="h-5 w-5" />
                     </Button>
                   </div>
-                  <nav className="flex flex-col space-y-4">
+                  
+                  <nav className="flex flex-col space-y-6 mb-8">
                     {navItems.map((item) => (
                       <a
                         key={item.href}
                         href={item.href}
-                        className="border-transparent text-gray-900 hover:text-primary px-3 py-2 text-base font-medium"
+                        className="text-gray-800 hover:text-primary text-base font-light tracking-wide"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.label}
                       </a>
                     ))}
                   </nav>
+                  
+                  {/* Mobile language switcher */}
+                  <div className="mt-auto pt-4 border-t">
+                    <div className="flex justify-center space-x-6 rtl:space-x-reverse">
+                      {languages.map((lang) => (
+                        <button
+                          key={lang.code}
+                          onClick={() => {
+                            handleLanguageChange(lang.code);
+                            setMobileMenuOpen(false);
+                          }}
+                          className={`text-sm uppercase px-2 py-1 ${
+                            language === lang.code 
+                              ? 'text-primary font-medium' 
+                              : 'text-gray-500'
+                          }`}
+                        >
+                          {lang.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 </SheetContent>
               </Sheet>
             </div>

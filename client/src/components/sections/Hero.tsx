@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 export function Hero() {
   const { t } = useTranslation();
@@ -28,56 +29,91 @@ export function Hero() {
   };
 
   return (
-    <div className="relative overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:pb-28 lg:w-full lg:max-w-2xl">
-          <motion.main 
-            className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 lg:mt-16"
+    <section className="relative bg-[#f8f8f8] overflow-hidden min-h-[90vh] flex items-center">
+      {/* Background accent */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent h-1/3"></div>
+      
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          {/* Text content - left side */}
+          <motion.div 
+            className="lg:pr-12 order-2 lg:order-1"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            <div className="text-center lg:text-left">
-              <motion.h1 
-                className="text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl"
-                variants={itemVariants}
+            <motion.h1 
+              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light text-gray-900 leading-tight"
+              variants={itemVariants}
+            >
+              {t('hero.title')}
+            </motion.h1>
+            
+            <motion.p 
+              className="mt-6 text-lg text-gray-600 font-light max-w-xl leading-relaxed"
+              variants={itemVariants}
+            >
+              {t('hero.subtitle')}
+            </motion.p>
+            
+            <motion.div 
+              className="mt-10 flex flex-col sm:flex-row gap-4"
+              variants={itemVariants}
+            >
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className={`text-sm font-normal tracking-wide uppercase border border-gray-900 bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-300 rounded-none px-8`}
               >
-                <span className="block font-serif">{t('hero.title')}</span>
-              </motion.h1>
-              <motion.p 
-                className="mt-3 text-base text-gray-700 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto lg:mx-0"
-                variants={itemVariants}
+                <a href="#collection" className="flex items-center gap-2">
+                  {t('hero.cta')}
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+              
+              <Button
+                asChild
+                size="lg"
+                variant="ghost"
+                className="text-sm font-normal tracking-wide uppercase text-gray-700 hover:text-gray-900 hover:bg-transparent px-4"
               >
-                {t('hero.subtitle')}
-              </motion.p>
+                <a href="#virtual-try-on">{t('hero.virtual_try_on')}</a>
+              </Button>
+            </motion.div>
+          </motion.div>
+          
+          {/* Image - right side */}
+          <div className={`relative h-full order-1 lg:order-2 min-h-[40vh] ${direction === 'rtl' ? 'lg:order-1' : ''}`}>
+            <motion.div 
+              className="relative h-full aspect-[3/4] max-h-[70vh] overflow-hidden bg-[#f0f0f0]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1625591339971-4c9a87a66871?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3"
+                alt="Model wearing designer glasses" 
+                className="w-full h-full object-cover object-center"
+              />
+              
+              {/* Floating product image */}
               <motion.div 
-                className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
-                variants={itemVariants}
+                className="absolute -bottom-6 -right-6 lg:-right-12 lg:-bottom-8 w-40 lg:w-52 shadow-xl"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
               >
-                <Button
-                  asChild
-                  size="lg"
-                  className="px-8 py-3 text-base font-medium rounded-md shadow"
-                >
-                  <a href="#collection">{t('hero.cta')}</a>
-                </Button>
+                <img 
+                  src="https://images.unsplash.com/photo-1633621641966-23836fcafd7a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3"
+                  alt="Glasses product" 
+                  className="w-full aspect-square object-cover bg-white p-4"
+                />
               </motion.div>
-            </div>
-          </motion.main>
+            </motion.div>
+          </div>
         </div>
       </div>
-      <div 
-        className={`lg:absolute lg:inset-y-0 ${direction === 'ltr' ? 'lg:right-0' : 'lg:left-0'} lg:w-1/2`}
-      >
-        <motion.img 
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="https://images.unsplash.com/photo-1577803645773-f96470509666?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-          alt="Person wearing designer glasses"
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.7 }}
-        />
-      </div>
-    </div>
+    </section>
   );
 }

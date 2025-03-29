@@ -71,25 +71,33 @@
   },
   "footer": {
     "about": {
-      "title": "About OpticElegance",
+      "title": "About",
       "story": "Our Story",
       "team": "Our Team",
-      "careers": "Careers",
-      "press": "Press"
+      "materials": "Materials",
+      "sustainability": "Sustainability"
     },
-    "customer": {
-      "title": "Customer Care",
+    "shop": {
+      "title": "Shop",
+      "collection": "Collection",
+      "virtual": "Virtual Try-On",
+      "new": "New Arrivals",
+      "bestsellers": "Bestsellers"
+    },
+    "help": {
+      "title": "Help",
       "faq": "FAQ",
-      "shipping": "Shipping & Returns",
-      "warranty": "Warranty",
-      "repairs": "Repairs"
+      "shipping": "Shipping",
+      "returns": "Returns & Refunds",
+      "contact": "Contact Us"
     },
-    "legal": {
-      "title": "Legal",
-      "terms": "Terms of Service",
-      "privacy": "Privacy Policy",
-      "accessibility": "Accessibility"
+    "newsletter": {
+      "title": "Join Our Newsletter",
+      "subtitle": "Get updates about new collections and events",
+      "placeholder": "Your email address",
+      "button": "Subscribe"
     },
+    "tagline": "Premium eyewear crafted for your digital lifestyle",
     "copyright": "© 2025 OpticElegance. All rights reserved."
   }
 }

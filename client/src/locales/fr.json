@@ -71,25 +71,33 @@
   },
   "footer": {
     "about": {
-      "title": "À propos d'OpticÉlégance",
+      "title": "À Propos",
       "story": "Notre Histoire",
       "team": "Notre Équipe",
-      "careers": "Carrières",
-      "press": "Presse"
+      "materials": "Matériaux",
+      "sustainability": "Durabilité"
     },
-    "customer": {
-      "title": "Service Client",
+    "shop": {
+      "title": "Boutique",
+      "collection": "Collection",
+      "virtual": "Essayage Virtuel",
+      "new": "Nouveautés",
+      "bestsellers": "Meilleures Ventes"
+    },
+    "help": {
+      "title": "Aide",
       "faq": "FAQ",
-      "shipping": "Livraison & Retours",
-      "warranty": "Garantie",
-      "repairs": "Réparations"
+      "shipping": "Livraison",
+      "returns": "Retours & Remboursements",
+      "contact": "Contactez-Nous"
     },
-    "legal": {
-      "title": "Juridique",
-      "terms": "Conditions d'Utilisation",
-      "privacy": "Politique de Confidentialité",
-      "accessibility": "Accessibilité"
+    "newsletter": {
+      "title": "Rejoignez Notre Newsletter",
+      "subtitle": "Recevez des informations sur les nouvelles collections et événements",
+      "placeholder": "Votre adresse e-mail",
+      "button": "S'abonner"
     },
+    "tagline": "Lunettes premium conçues pour votre style de vie numérique",
     "copyright": "© 2025 OpticÉlégance. Tous droits réservés."
   }
 }
