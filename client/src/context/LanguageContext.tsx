@@ -22,15 +22,18 @@ interface LanguageProviderProps {
 
 // Create the provider component
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  // Initialize state
-  const [language, setLanguageState] = useState('en');
-  const [direction, setDirection] = useState<'ltr' | 'rtl'>('ltr');
+  // Initialize state with the current i18n language or default to 'en'
+  const [language, setLanguageState] = useState(i18n.language || 'en');
+  const [direction, setDirection] = useState<'ltr' | 'rtl'>(i18n.language === 'ar' ? 'rtl' : 'ltr');
 
-  // Simple function to change language
+  // Function to change language that ensures context state and i18n are in sync
   const setLanguage = (lang: string) => {
     console.log('Context setLanguage called with:', lang);
     
     try {
+      // Update localStorage directly
+      localStorage.setItem('i18nextLng', lang);
+      
       // Change i18n language
       i18n.changeLanguage(lang);
       
@@ -44,7 +47,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     }
   };
 
-  // Listen for i18n language changes
+  // Listen for i18n language changes from outside the context
   useEffect(() => {
     const handleLanguageChanged = (newLang: string) => {
       console.log('Language change detected:', newLang);
@@ -55,8 +58,11 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     // Add event listener
     i18n.on('languageChanged', handleLanguageChanged);
     
-    // Initialize with English
-    setLanguage('en');
+    // Set initial language from i18n or localStorage
+    const savedLang = localStorage.getItem('i18nextLng') || 'en';
+    if (savedLang !== language) {
+      setLanguage(savedLang);
+    }
     
     // Cleanup
     return () => {
@@ -81,5 +87,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 // Custom hook to use the language context
 export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
   return context;
 };

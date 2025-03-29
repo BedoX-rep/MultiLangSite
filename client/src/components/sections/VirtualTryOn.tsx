@@ -90,15 +90,7 @@ export function VirtualTryOn() {
                   </span>
                 </Button>
                 
-                <Button
-                  variant="outline"
-                  className="border-gray-400 hover:border-gray-900 text-gray-700 hover:text-gray-900 hover:bg-transparent rounded-none text-sm font-light tracking-wide"
-                >
-                  <span className="flex items-center gap-2">
-                    {t('virtual.learnMore')}
-                    <ArrowRight className="h-4 w-4" />
-                  </span>
-                </Button>
+                {/* Learn More button removed as requested */}
               </motion.div>
             </div>
           </motion.div>

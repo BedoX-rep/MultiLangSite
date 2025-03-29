@@ -34,7 +34,8 @@
     "product2": "Lunettes Montrose",
     "product3": "Lunettes de Soleil Ambre",
     "product4": "Montures Écologiques en Bois",
-    "viewMore": "Voir Plus"
+    "viewMore": "Voir Plus",
+    "quickView": "Aperçu Rapide"
   },
   "virtual": {
     "title": "Technologie d'Essayage Virtuel",
@@ -43,7 +44,8 @@
     "bullet2": "Accès depuis n'importe quel appareil avec caméra",
     "bullet3": "Comparez plusieurs styles côte à côte",
     "bullet4": "Partagez avec vos amis et votre famille pour avoir des opinions",
-    "cta": "Essayer Maintenant"
+    "cta": "Essayer Maintenant",
+    "tryNow": "Essayer"
   },
   "partners": {
     "title": "Matériaux Premium & Partenaires",
@@ -54,6 +56,45 @@
     "materialsDescription": "Nous utilisons de l'acétate hypoallergénique, du titane et des matériaux durables qui sont légers mais incroyablement résistants.",
     "brands": "Partenaires de Confiance",
     "brandsDescription": "Nos verres sont fabriqués par les manufacturiers mondialement reconnus Essilor et Indo, assurant une clarté optique et une protection parfaites."
+  },
+  "ordering": {
+    "title": "Comment Commander Vos Lunettes Parfaites",
+    "subtitle": "Notre processus simple en 4 étapes rend la commande de lunettes personnalisées en ligne facile et pratique",
+    "step": "Étape",
+    "step1": {
+      "title": "Choisissez Vos Montures",
+      "description": "Parcourez notre collection et sélectionnez les montures qui correspondent à votre style et vos préférences."
+    },
+    "step2": {
+      "title": "Sélectionnez le Type de Verre",
+      "description": "Choisissez parmi vision simple, progressive, bifocale ou verres spécialisés avec traitements optionnels."
+    },
+    "step3": {
+      "title": "Téléchargez Votre Ordonnance",
+      "description": "Téléchargez facilement votre ordonnance ou sélectionnez 'envoyer plus tard' si vous avez besoin de plus de temps."
+    },
+    "step4": {
+      "title": "Options de Personnalisation",
+      "description": "Ajoutez teinte, traitement anti-reflet, filtrage de la lumière bleue ou autres caractéristiques spéciales."
+    },
+    "cta": "Commencer Votre Commande"
+  },
+  "locations": {
+    "title": "Visitez Nos Boutiques",
+    "subtitle": "Découvrez notre collection en personne dans l'une de nos boutiques optiques premium",
+    "directions": "Obtenir l'Itinéraire",
+    "store1": {
+      "name": "Lens Optique Centre-Ville",
+      "address": "123 Avenue de la Mode, Quartier Centre-Ville",
+      "hours": "Lun-Sam: 10h-19h, Dim: 12h-17h",
+      "phone": "+1 (555) 123-4567"
+    },
+    "store2": {
+      "name": "Lens Optique Galerie",
+      "address": "456 Allée du Luxe, Centre Commercial Galerie",
+      "hours": "Lun-Sam: 11h-21h, Dim: 12h-18h",
+      "phone": "+1 (555) 987-6543"
+    }
   },
   "trusted": {
     "title": "Avis de Clients",

@@ -62,9 +62,7 @@ export function FeaturedCollection() {
             <h2 className="text-3xl md:text-4xl font-serif font-light text-gray-900 leading-tight">
               {t('featured.title')}
             </h2>
-            <p className="mt-3 text-gray-600 font-light max-w-xl">
-              {t('featured.subtitle')}
-            </p>
+            {/* Subtitle removed as requested */}
           </div>
           
           <div className={`flex flex-wrap gap-1 ${direction === 'rtl' ? 'md:justify-start' : 'md:justify-end'}`}>

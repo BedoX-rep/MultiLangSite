@@ -72,14 +72,7 @@ export function Hero() {
                 </a>
               </Button>
               
-              <Button
-                asChild
-                size="lg"
-                variant="ghost"
-                className="text-sm font-normal tracking-wide uppercase text-gray-700 hover:text-gray-900 hover:bg-transparent px-4"
-              >
-                <a href="#virtual-try-on">{t('hero.virtual_try_on')}</a>
-              </Button>
+              {/* Virtual try-on button removed as requested */}
             </motion.div>
           </motion.div>
           

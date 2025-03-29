@@ -34,7 +34,8 @@
     "product2": "Montrose Glasses",
     "product3": "Amber Sunglasses",
     "product4": "Eco Wood Frames",
-    "viewMore": "View More"
+    "viewMore": "View More",
+    "quickView": "Quick View"
   },
   "virtual": {
     "title": "Virtual Try-On Technology",
@@ -43,7 +44,8 @@
     "bullet2": "Access from any device with a camera",
     "bullet3": "Compare multiple styles side by side",
     "bullet4": "Share with friends and family for opinions",
-    "cta": "Try It Now"
+    "cta": "Try It Now",
+    "tryNow": "Try Now"
   },
   "partners": {
     "title": "Premium Materials & Brand Partners",
@@ -54,6 +56,45 @@
     "materialsDescription": "We use hypoallergenic acetate, titanium, and sustainable materials that are lightweight yet incredibly durable.",
     "brands": "Trusted Partners",
     "brandsDescription": "Our lenses are crafted by world-renowned manufacturers Essilor and Indo, ensuring perfect optical clarity and protection."
+  },
+  "ordering": {
+    "title": "How to Order Your Perfect Glasses",
+    "subtitle": "Our simple 4-step process makes ordering custom glasses online easy and convenient",
+    "step": "Step",
+    "step1": {
+      "title": "Choose Your Frames",
+      "description": "Browse our collection and select the frames that match your style and preferences."
+    },
+    "step2": {
+      "title": "Select Lens Type",
+      "description": "Choose from single vision, progressive, bifocal, or specialized lenses with optional coatings."
+    },
+    "step3": {
+      "title": "Upload Prescription",
+      "description": "Easily upload your prescription or select 'send later' if you need more time."
+    },
+    "step4": {
+      "title": "Customization Options",
+      "description": "Add lens tinting, anti-reflective coating, blue light filtering, or other special features."
+    },
+    "cta": "Start Your Order"
+  },
+  "locations": {
+    "title": "Visit Our Stores",
+    "subtitle": "Experience our collection in person at one of our premium optical boutiques",
+    "directions": "Get Directions",
+    "store1": {
+      "name": "Lens Optique Downtown",
+      "address": "123 Fashion Avenue, Downtown District",
+      "hours": "Mon-Sat: 10AM-7PM, Sun: 12PM-5PM",
+      "phone": "+1 (555) 123-4567"
+    },
+    "store2": {
+      "name": "Lens Optique Galleria",
+      "address": "456 Luxury Lane, Galleria Mall",
+      "hours": "Mon-Sat: 11AM-9PM, Sun: 12PM-6PM",
+      "phone": "+1 (555) 987-6543"
+    }
   },
   "trusted": {
     "title": "Client Reviews",

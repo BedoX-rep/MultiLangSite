@@ -18,23 +18,12 @@ export function Header() {
     { code: 'ar', label: 'Ar' }
   ];
 
-  // Function to handle language change directly
+  // Function to handle language change
   const handleLanguageChange = (lang: string) => {
-    console.log(`Button clicked for language: ${lang}, current language is: ${language}`);
+    console.log(`Button clicked for language: ${lang}, current language is: ${i18n.language}`);
     
-    // Direct way to change language
-    i18n.changeLanguage(lang);
-    
-    // Also call context method
+    // Use the context method which will handle everything
     setLanguage(lang);
-    
-    // Force update localStorage
-    localStorage.setItem('i18nextLng', lang);
-    
-    // Log current state after change
-    setTimeout(() => {
-      console.log(`After change: i18n.language=${i18n.language}, context language=${language}`);
-    }, 100);
   };
 
   const navItems = [
