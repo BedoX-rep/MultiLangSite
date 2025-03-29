@@ -1,76 +1,100 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import i18n from 'i18next';
+import i18n from '../lib/i18n';
 
+// Define the context type
 interface LanguageContextType {
   language: string;
   direction: 'ltr' | 'rtl';
   setLanguage: (lang: string) => void;
 }
 
-// Create a default context value
+// Create default context value
 const defaultContextValue: LanguageContextType = {
   language: 'en',
   direction: 'ltr',
   setLanguage: () => {}
 };
 
-// Export the context with a default value
+// Create the context
 export const LanguageContext = createContext<LanguageContextType>(defaultContextValue);
 
+// Define props for the provider component
 interface LanguageProviderProps {
   children: ReactNode;
 }
 
+// Create the provider component
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  // Get stored language from localStorage or use browser language
-  const getInitialLanguage = () => {
-    const savedLanguage = localStorage.getItem('i18nextLng');
-    return savedLanguage || navigator.language.split('-')[0] || 'en';
-  };
-
-  const [language, setLanguageState] = useState(getInitialLanguage());
-  const [direction, setDirection] = useState<'ltr' | 'rtl'>(language === 'ar' ? 'rtl' : 'ltr');
   const { i18n } = useTranslation();
+  const [language, setLanguageState] = useState(i18n.language || 'en');
+  const [direction, setDirection] = useState<'ltr' | 'rtl'>(
+    i18n.language === 'ar' ? 'rtl' : 'ltr'
+  );
 
-  // Initialize with the correct language
-  useEffect(() => {
-    const initialLang = getInitialLanguage();
-    i18n.changeLanguage(initialLang);
-    setLanguageState(initialLang);
-    setDirection(initialLang === 'ar' ? 'rtl' : 'ltr');
-  }, []);
-
+  // Function to change the language
   const setLanguage = (lang: string) => {
+    console.log('Changing language to:', lang);
+    
+    // First update i18n
     i18n.changeLanguage(lang);
+    
+    // Then update state
     setLanguageState(lang);
-    setDirection(lang === 'ar' ? 'rtl' : 'ltr');
+    
+    // Update direction based on language
+    const newDirection = lang === 'ar' ? 'rtl' : 'ltr';
+    setDirection(newDirection);
+    
+    // Force save to localStorage (in case detection fails)
     localStorage.setItem('i18nextLng', lang);
   };
 
+  // Update HTML document attributes when language/direction changes
   useEffect(() => {
-    // Update HTML attributes
     document.documentElement.lang = language;
     document.documentElement.dir = direction;
-    
-    console.log('Language changed to:', language, 'Direction:', direction);
+    console.log('Language updated to:', language, 'Direction:', direction);
   }, [language, direction]);
 
-  // Create the value object to be passed to the provider
-  const contextValue = {
-    language,
-    direction,
-    setLanguage
-  };
+  // When i18n language changes externally, sync our state
+  useEffect(() => {
+    const handleLanguageChanged = () => {
+      const currentLang = i18n.language;
+      setLanguageState(currentLang);
+      setDirection(currentLang === 'ar' ? 'rtl' : 'ltr');
+    };
+
+    // Add event listener for i18n language changes
+    i18n.on('languageChanged', handleLanguageChanged);
+
+    // Force English on first load
+    i18n.changeLanguage('en');
+    setLanguageState('en');
+    setDirection('ltr');
+    localStorage.setItem('i18nextLng', 'en');
+
+    // Clean up
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
+  }, []);
 
   return (
-    <LanguageContext.Provider value={contextValue}>
+    <LanguageContext.Provider 
+      value={{ 
+        language, 
+        direction, 
+        setLanguage 
+      }}
+    >
       {children}
     </LanguageContext.Provider>
   );
 };
 
-export const useLanguage = () => {
+// Custom hook to use the language context
+export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext);
   if (!context) {
     throw new Error('useLanguage must be used within a LanguageProvider');

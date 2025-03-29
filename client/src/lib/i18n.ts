@@ -6,8 +6,9 @@ import enTranslation from '../locales/en.json';
 import frTranslation from '../locales/fr.json';
 import arTranslation from '../locales/ar.json';
 
+// Initialize i18next
 i18n
-  .use(LanguageDetector)
+  .use(LanguageDetector) // we need this for proper detection
   .use(initReactI18next)
   .init({
     resources: {
@@ -21,6 +22,8 @@ i18n
         translation: arTranslation
       }
     },
+    // Set default language to English
+    lng: 'en',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false
@@ -28,8 +31,11 @@ i18n
     react: {
       useSuspense: false
     },
+    // Configure the detection
     detection: {
-      order: ['localStorage', 'navigator'],
+      // Only use localStorage, not browser settings
+      order: ['localStorage'],
+      lookupLocalStorage: 'i18nextLng',
       caches: ['localStorage']
     }
   });
