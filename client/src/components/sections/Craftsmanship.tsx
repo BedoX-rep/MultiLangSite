@@ -18,22 +18,15 @@ export function Craftsmanship() {
 
   // Animation for the logo carousel
   useEffect(() => {
-    const startCarouselAnimation = async () => {
-      // Create infinite animation loop
-      while (true) {
-        await controls.start({
-          x: [0, -1500],
-          transition: { 
-            duration: 25, 
-            ease: "linear", 
-            repeat: Infinity,
-            repeatType: "loop"
-          }
-        });
+    controls.start({
+      x: -1500,
+      transition: { 
+        duration: 25, 
+        ease: "linear", 
+        repeat: Infinity,
+        repeatType: "loop"
       }
-    };
-
-    startCarouselAnimation();
+    });
   }, [controls]);
   
   return (
