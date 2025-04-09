@@ -60,11 +60,22 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative bg-[#f8f8f8] overflow-hidden">
+    <section className="relative overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://drive.google.com/uc?export=view&id=1f4sCq8H-lGxVtSthttlMyS1n6B9rNL73" 
+          alt="Background" 
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-black/20"></div>
+      </div>
+      
       {/* Hero section */}
       <div className="min-h-[85vh] flex items-start pt-24 md:pt-32 lg:items-center relative">
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent h-1/3 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-transparent h-1/3 z-0"></div>
         
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-start lg:items-center">

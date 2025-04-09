@@ -12,26 +12,26 @@ export function HowToPickGlasses() {
     {
       id: 1,
       title: "Choose Your Base Frame",
-      description: "Whatever style you're looking for, we have the perfect frame shape for you! Our glasses start at just $50.",
-      image: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+      description: "Select from hundreds of styles that match your face and personality.",
+      icon: "https://drive.google.com/uc?export=view&id=1dHZ0jlB97pNXk7XElBnTEXpIjAd3X7ne"
     },
     {
       id: 2,
       title: "Select Your Lens Type",
-      description: "From single vision to progressives, we'll fill your prescription to your needs and can add enhancements like blue-light filtering.",
-      image: "https://images.unsplash.com/photo-1577803645773-f96470509666?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+      description: "Choose single vision, progressive, or blue-light filtering options.",
+      icon: "https://drive.google.com/uc?export=view&id=1cFhA25sPAxP-CplhPEJuudxJSuE4Hs9W"
     },
     {
       id: 3,
       title: "Upload Your Prescription",
-      description: "Simply upload a photo of your prescription or enter the details manually. Our team will verify everything for accuracy.",
-      image: "https://images.unsplash.com/photo-1587614298171-55d8633b2bdd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+      description: "Easily upload a photo of your prescription or enter details manually.",
+      icon: "https://drive.google.com/uc?export=view&id=1YpW_Fjzbmmz1EVQkNjO8EyuTmmC7VKZc"
     },
     {
       id: 4,
       title: "Receive Your Glasses",
-      description: "Your custom glasses will be delivered right to your door, carefully packaged and ready to wear. Fast shipping included!",
-      image: "https://images.unsplash.com/photo-1589642048698-a64e8c7e479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+      description: "Fast delivery to your door with perfect fit guarantee.",
+      icon: "https://drive.google.com/uc?export=view&id=1nFtzQ_kqNcLoge6xZhgTs8I3woUOscsb"
     }
   ];
 
@@ -60,25 +60,31 @@ export function HowToPickGlasses() {
           {steps.map((step) => (
             <motion.div
               key={step.id}
-              className="flex flex-col"
+              className="flex flex-col items-center text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: step.id * 0.1 }}
             >
-              <div className="mb-4 aspect-square overflow-hidden rounded-md bg-gray-100">
-                <img 
-                  src={step.image} 
-                  alt={step.title} 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
+              <div className="mb-6 flex items-center justify-center">
+                <div className="w-24 h-24 relative">
+                  <img 
+                    src={step.icon} 
+                    alt={step.title} 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
               
-              <h3 className="text-lg font-medium text-center text-gray-900 mb-2">
+              <div className="absolute -mt-4 w-6 h-6 flex items-center justify-center rounded-full bg-primary text-white text-xs font-bold">
+                {step.id}
+              </div>
+              
+              <h3 className="text-lg font-medium text-gray-900 mb-3 mt-4">
                 {step.title}
               </h3>
               
-              <p className="text-gray-600 text-sm text-center">
+              <p className="text-gray-600 text-sm max-w-xs mx-auto">
                 {step.description}
               </p>
             </motion.div>
