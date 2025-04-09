@@ -64,7 +64,7 @@ export function Hero() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://drive.google.com/uc?export=view&id=1f4sCq8H-lGxVtSthttlMyS1n6B9rNL73" 
+          src="/images/beautiful-young-woman-with-glasses.jpg" 
           alt="Background" 
           className="w-full h-full object-cover object-center"
         />
@@ -155,21 +155,8 @@ export function Hero() {
               </motion.div>
             </motion.div>
             
-            {/* Image - right side */}
-            <div className={`relative h-full order-1 lg:order-2 ${direction === 'rtl' ? 'lg:order-1' : ''}`}>
-              <motion.div 
-                className="relative h-full aspect-[3/4] max-h-[70vh] overflow-hidden bg-[#f0f0f0]"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.3 }}
-              >
-                <img 
-                  src="https://media-hosting.imagekit.io/9ded3629887546f7/portrait-beautiful-smart-smiling-hipster-brunette-woman-model-casual-stylish-blue-jeans-clothes-glasses-isolated-white.jpg?Expires=1838812831&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=yvZbWVvq654wcvmDT8jEBK2FKh4J95S~bBsmZUKsZb5nESbIaE8RGxr0u34Ka491lAHdUaSdeoaTqUfCVbUjgek-GBxVWeCokE1Ophah1U2~t6oRMNYbnFkp5FXYsvo2SlKrnQez1l2Dt7BJbCz27cMoI2yvrihg~J4AcqIjZQD7b4WBjUXSdegS0KLVRAhZA77cF01XarZYkDYA2RwMPWjft2lTtcfALRLypyIarUMHLjXTTQ~tE2El6c7f8lzR3p7KHy5e~KTTumdKgyyHbqFg3p5RHpZ49GltjIsEuxvMdb52tiDYUikQH6wpq1B5FhL7RDE19n0Ea3rzCixA3w__"
-                  alt="Model wearing designer glasses" 
-                  className="w-full h-full object-cover object-center"
-                />
-              </motion.div>
-            </div>
+            {/* Empty space for balance - right side */}
+            <div className={`relative h-full order-1 lg:order-2 ${direction === 'rtl' ? 'lg:order-1' : ''}`}></div>
           </div>
         </div>
         

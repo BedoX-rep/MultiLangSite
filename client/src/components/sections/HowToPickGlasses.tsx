@@ -13,25 +13,25 @@ export function HowToPickGlasses() {
       id: 1,
       title: "Choose Your Base Frame",
       description: "Select from hundreds of styles that match your face and personality.",
-      icon: "https://drive.google.com/uc?export=view&id=1dHZ0jlB97pNXk7XElBnTEXpIjAd3X7ne"
+      icon: "/icons/icon1.png"
     },
     {
       id: 2,
       title: "Select Your Lens Type",
       description: "Choose single vision, progressive, or blue-light filtering options.",
-      icon: "https://drive.google.com/uc?export=view&id=1cFhA25sPAxP-CplhPEJuudxJSuE4Hs9W"
+      icon: "/icons/icon2.png"
     },
     {
       id: 3,
       title: "Upload Your Prescription",
       description: "Easily upload a photo of your prescription or enter details manually.",
-      icon: "https://drive.google.com/uc?export=view&id=1YpW_Fjzbmmz1EVQkNjO8EyuTmmC7VKZc"
+      icon: "/icons/icon3.png"
     },
     {
       id: 4,
       title: "Receive Your Glasses",
       description: "Fast delivery to your door with perfect fit guarantee.",
-      icon: "https://drive.google.com/uc?export=view&id=1nFtzQ_kqNcLoge6xZhgTs8I3woUOscsb"
+      icon: "/icons/icon4.png"
     }
   ];
 
