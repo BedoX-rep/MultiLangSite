@@ -4,9 +4,8 @@ import {
   ArrowRight,
   Sun,
   Droplets,
-  PaintBucket,
-  Palette,
-  Glasses
+  Shield,
+  CheckCircle
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
@@ -25,186 +24,89 @@ export function CustomSunglasses() {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-[#f8f8f8] to-white py-24">
+    <section className="bg-white py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <span className="inline-block border-b-2 border-primary px-2 py-1 mb-4 text-sm font-medium uppercase tracking-wider text-primary">
-            {t('customSunglasses.subtitle')}
-          </span>
-          <h2 className="text-3xl md:text-4xl font-serif font-light text-gray-900 mb-5">
-            {t('customSunglasses.title')}
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            {t('customSunglasses.description')}
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Image with tint examples */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left side - Text and CTA */}
           <motion.div
-            className="relative aspect-square lg:aspect-auto lg:h-[600px]"
+            className="order-2 lg:order-1"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <img 
-              src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3"
-              alt="Model wearing customized sunglasses"
-              className="h-full w-full object-cover rounded-md"
-            />
+            <span className="inline-block border-b-2 border-primary px-2 py-1 mb-4 text-sm font-medium uppercase tracking-wider text-primary">
+              {t('customSunglasses.subtitle', 'Premium Protection')}
+            </span>
             
-            {/* Tint color options floating display */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-md shadow-lg max-w-xs">
-                <h3 className="text-primary font-medium mb-4 text-center">
-                  {t('customSunglasses.colorTitle')}
-                </h3>
-                <div className="grid grid-cols-3 gap-3">
-                  {tintOptions.map((tint) => (
-                    <div key={tint.color} className="flex flex-col items-center">
-                      <div 
-                        className="w-12 h-12 rounded-full mb-2" 
-                        style={{ backgroundColor: tint.hex }}
-                      />
-                      <span className="text-xs text-gray-700 capitalize">{tint.color}</span>
-                    </div>
-                  ))}
+            <h2 className="text-3xl md:text-4xl font-serif font-light text-gray-900 mb-6">
+              Custom Designed Sunglasses
+            </h2>
+            
+            <p className="text-gray-600 leading-relaxed mb-8">
+              Choose from a wide range of tints and coatings to create your perfect pair of sunglasses. 
+              Our premium lenses provide 100% UV protection while enhancing your vision with 
+              customized colors and polarization options.
+            </p>
+            
+            <div className="space-y-6 mb-10">
+              {['Premium polarized lenses', 'Six tint color options', 'Gradient or solid tint', 'Anti-scratch coating'].map((feature, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center text-white text-xs">✓</div>
+                  <p className="text-gray-800">{feature}</p>
                 </div>
-              </div>
+              ))}
             </div>
+            
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white rounded-none text-sm font-normal tracking-wide px-10"
+            >
+              <span className="flex items-center gap-2">
+                Customize Your Sunglasses
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </Button>
           </motion.div>
           
-          {/* Right side - Tint options descriptions */}
-          <div>
-            <motion.h3 
-              className="text-2xl font-serif font-light text-gray-900 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-            >
-              {t('customSunglasses.optionsTitle')}
-            </motion.h3>
-            
-            <div className="space-y-8">
-              <motion.div
-                className="flex gap-5"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                  <Droplets className="h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-medium text-gray-900 mb-2">
-                    {t('customSunglasses.gradientTitle')}
-                  </h4>
-                  <p className="text-gray-600 mb-3">
-                    {t('customSunglasses.gradientDescription')}
-                  </p>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                className="flex gap-5"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                  <PaintBucket className="h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-medium text-gray-900 mb-2">
-                    {t('customSunglasses.fullTitleTitle')}
-                  </h4>
-                  <p className="text-gray-600 mb-3">
-                    {t('customSunglasses.fullTintDescription')}
-                  </p>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                className="flex gap-5"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                  <Sun className="h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-medium text-gray-900 mb-2">
-                    {t('customSunglasses.polarizedTitle')}
-                  </h4>
-                  <p className="text-gray-600 mb-3">
-                    {t('customSunglasses.polarizedDescription')}
-                  </p>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="mt-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-              >
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-white rounded-none text-sm font-normal tracking-wide px-8"
-                >
-                  <span className="flex items-center gap-2">
-                    {t('customSunglasses.cta')}
-                    <ArrowRight className="h-4 w-4" />
-                  </span>
-                </Button>
-              </motion.div>
-            </div>
-          </div>
+          {/* Right side - Image */}
+          <motion.div
+            className="order-1 lg:order-2 relative"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <img 
+              src="/images/sunglasses1.png"
+              alt="Custom designed sunglasses"
+              className="w-full object-contain rounded-lg"
+            />
+          </motion.div>
         </div>
         
+        {/* Tint color options */}
         <motion.div 
-          className="mt-16 border-t border-gray-200 pt-12"
+          className="mt-16 pt-8 border-t border-gray-100"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5 }}
         >
-          <h3 className="text-xl font-medium text-gray-900 mb-6 text-center">
-            {t('customSunglasses.colorTitle')}
-          </h3>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h3 className="text-lg text-center font-medium text-gray-900 mb-6">Available Tint Colors</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
             {tintOptions.map((tint) => (
               <motion.div
                 key={tint.color}
-                className="bg-white p-4 rounded-sm border border-gray-100 flex items-center gap-4"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3 }}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                className="text-center"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
               >
                 <div 
-                  className="w-16 h-16 rounded-full flex-shrink-0" 
+                  className="w-16 h-16 rounded-full mx-auto mb-2 shadow-md" 
                   style={{ backgroundColor: tint.hex }}
                 />
-                <div>
-                  <span className="text-gray-900 font-medium block">{tint.color}</span>
-                  <span className="text-sm text-gray-600">{t(`customSunglasses.colors.${tint.color}`)}</span>
-                </div>
+                <span className="text-sm text-gray-800 capitalize">{tint.color}</span>
               </motion.div>
             ))}
           </div>

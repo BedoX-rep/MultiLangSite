@@ -66,10 +66,10 @@ export function Hero() {
         <img 
           src="/images/beautiful-young-woman-with-glasses.jpg" 
           alt="Background" 
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-right"
         />
-        {/* Overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        {/* Very light overlay for text readability if needed */}
+        <div className="absolute inset-0 bg-white/5"></div>
       </div>
       
       {/* Hero section */}
@@ -78,7 +78,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-transparent h-1/3 z-0"></div>
         
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-start lg:items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-1 lg:max-w-xl gap-12 lg:gap-8 items-start lg:items-center">
             {/* Text content */}
             <motion.div 
               className="lg:pr-12 order-2 lg:order-1"
