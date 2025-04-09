@@ -7,11 +7,13 @@ import { CustomSunglasses } from '@/components/sections/CustomSunglasses';
 import { ContactLenses } from '@/components/sections/ContactLenses';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { StoreLocations } from '@/components/sections/StoreLocations';
+import { HowToPickGlasses } from '@/components/sections/HowToPickGlasses';
 
 export default function Home() {
   return (
     <div>
       <Hero />
+      <HowToPickGlasses />
       <Services />
       <FeaturedCollection />
       <CustomSunglasses />

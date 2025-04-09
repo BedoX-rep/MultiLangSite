@@ -153,7 +153,7 @@ export function Hero() {
                 transition={{ duration: 0.7, delay: 0.3 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3"
+                  src="https://media-hosting.imagekit.io/9ded3629887546f7/portrait-beautiful-smart-smiling-hipster-brunette-woman-model-casual-stylish-blue-jeans-clothes-glasses-isolated-white.jpg?Expires=1838812831&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=yvZbWVvq654wcvmDT8jEBK2FKh4J95S~bBsmZUKsZb5nESbIaE8RGxr0u34Ka491lAHdUaSdeoaTqUfCVbUjgek-GBxVWeCokE1Ophah1U2~t6oRMNYbnFkp5FXYsvo2SlKrnQez1l2Dt7BJbCz27cMoI2yvrihg~J4AcqIjZQD7b4WBjUXSdegS0KLVRAhZA77cF01XarZYkDYA2RwMPWjft2lTtcfALRLypyIarUMHLjXTTQ~tE2El6c7f8lzR3p7KHy5e~KTTumdKgyyHbqFg3p5RHpZ49GltjIsEuxvMdb52tiDYUikQH6wpq1B5FhL7RDE19n0Ea3rzCixA3w__"
                   alt="Model wearing designer glasses" 
                   className="w-full h-full object-cover object-center"
                 />
@@ -169,85 +169,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1 }}
         >
-          <a href="#ordering-steps" className="flex flex-col items-center justify-center">
+          <a href="#how-to-pick" className="flex flex-col items-center justify-center">
             <ChevronDown className="h-6 w-6 text-primary animate-bounce" />
           </a>
         </motion.div>
-      </div>
-      
-      {/* Ordering Process Steps */}
-      <div id="ordering-steps" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="inline-block border-b-2 border-primary px-2 py-1 mb-4 text-sm font-medium uppercase tracking-wider text-primary">
-              {t('ordering.easierThanEver')}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-light text-gray-900 mb-3">
-              {t('ordering.title')}
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t('ordering.subtitle')}
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
-            {orderingSteps.map((step) => (
-              <motion.div
-                key={step.id}
-                className="group relative bg-white rounded-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: step.delay }}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              >
-                <div className="absolute top-0 left-0 w-full h-1 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                
-                <div className="absolute top-4 right-4 bg-primary text-white text-xs font-medium py-1 px-2 rounded-sm">
-                  {t('ordering.step')} {step.id}
-                </div>
-                
-                <div className="p-6 pt-10">
-                  <div className="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    <step.icon className="h-7 w-7" />
-                  </div>
-                  
-                  <h3 className="text-lg font-medium text-gray-900 mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    {step.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          
-          <motion.div 
-            id="start-order"
-            className="text-center mt-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-          >
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white rounded-none text-sm font-normal tracking-wide uppercase px-10 py-7"
-            >
-              <span className="flex items-center gap-2">
-                {t('ordering.startOrderCta')}
-                <ArrowRight className="h-4 w-4" />
-              </span>
-            </Button>
-          </motion.div>
-        </div>
       </div>
     </section>
   );
