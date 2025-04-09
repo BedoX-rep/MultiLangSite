@@ -153,7 +153,7 @@ export function Hero() {
                 transition={{ duration: 0.7, delay: 0.3 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1625591339971-4c9a87a66871?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3"
+                  src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3"
                   alt="Model wearing designer glasses" 
                   className="w-full h-full object-cover object-center"
                 />

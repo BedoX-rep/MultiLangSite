@@ -53,7 +53,7 @@
     "tryNow": "Try Now"
   },
   "partners": {
-    "title": "Premium Materials & Brand Partners",
+    "title": "Our Brand Partners",
     "description": "At Lens Optique, we use only the highest quality materials and partner with leading lens manufacturers to create eyewear that's both beautiful and functional.",
     "trustedBy": "Trusted By World-Leading Brands",
     "quality": "Quality Assurance",
@@ -62,6 +62,46 @@
     "materialsDescription": "We use hypoallergenic acetate, titanium, and sustainable materials that are lightweight yet incredibly durable.",
     "brands": "Trusted Partners",
     "brandsDescription": "Our lenses are crafted by world-renowned manufacturers ensuring perfect optical clarity and protection."
+  },
+  "customSunglasses": {
+    "title": "Customized Sunglasses",
+    "subtitle": "Design your perfect sunglasses with personalized tint options",
+    "description": "Express your unique style with our customizable sunglasses. Choose from a variety of frame styles and add your preferred tint color to create the perfect look for any occasion.",
+    "optionsTitle": "Tint Options",
+    "gradientTitle": "Gradient Effects",
+    "gradientDescription": "Create a sophisticated look with our gradient tinting options, transitioning from darker at the top to lighter at the bottom.",
+    "fullTitleTitle": "Full Tint",
+    "fullTintDescription": "Choose a consistent tint throughout the lens for maximum color effect and style impact.",
+    "polarizedTitle": "Polarized Options",
+    "polarizedDescription": "Add polarization to reduce glare and enhance visual clarity, perfect for driving and outdoor activities.",
+    "colorTitle": "Color Selection",
+    "colors": {
+      "brown": "Brown - Enhances contrast and depth perception",
+      "grey": "Grey - Preserves natural colors while reducing brightness",
+      "green": "Green - Provides excellent contrast in varied light conditions",
+      "blue": "Blue - Creates a cool appearance while reducing yellow light",
+      "rose": "Rose - Improves visibility in low-light conditions",
+      "yellow": "Yellow - Enhances visual acuity in hazy or foggy conditions"
+    },
+    "cta": "Customize Your Sunglasses"
+  },
+  "contactLenses": {
+    "title": "Contact Lenses",
+    "subtitle": "Premium contact lenses for comfort and clarity",
+    "description": "Discover our selection of high-quality contact lenses designed for all-day comfort and exceptional visual clarity. We offer daily, bi-weekly, and monthly options to suit your lifestyle.",
+    "dailyTitle": "Daily Disposables",
+    "dailyDescription": "Fresh lenses every day for maximum comfort and convenience, ideal for occasional wearers or those with allergies.",
+    "biweeklyTitle": "Bi-Weekly Lenses",
+    "biweeklyDescription": "Durable lenses that provide excellent value while maintaining comfort for up to two weeks of wear.",
+    "monthlyTitle": "Monthly Lenses",
+    "monthlyDescription": "Long-lasting lenses with advanced moisture technology for extended comfortable wear.",
+    "specialtyTitle": "Specialty Lenses",
+    "specialtyDescription": "Solutions for astigmatism, presbyopia, and multifocal needs with cutting-edge lens technology.",
+    "coloredTitle": "Colored Contacts",
+    "coloredDescription": "Enhance or completely change your eye color with our range of natural-looking colored lenses.",
+    "examTitle": "Contact Lens Exam",
+    "examDescription": "Our specialists will determine the perfect fit for your eyes and lifestyle with a comprehensive contact lens examination.",
+    "cta": "Explore Contact Lenses"
   },
   "ordering": {
     "title": "How to Order Your Perfect Glasses",

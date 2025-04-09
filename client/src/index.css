@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+.logos-slide:hover {
+  animation-play-state: paused;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
